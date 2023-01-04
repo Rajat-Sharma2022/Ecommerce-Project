@@ -1,0 +1,5 @@
+framework:
+    serializer:
+        enable_annotations: false
+    property_access: ~
+    annotations: ~
