@@ -1,0 +1,83 @@
+#landing {
+   background-color: #fff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+	background-color: #212329;
+	color: #888888;
+    }
+    h1, h2, h3, h4, h5, #pro {
+	color: #fff!important;
+    }
+    #nav {
+        background-color: #363940!important;
+    }
+    #common {
+        background-color: #4b515d;
+        color: #a9a9a9;
+    }
+    #footer {
+	background-color: #111215!important;
+    }
+    #landing {
+	background-color: #3c4048;
+    }
+
+    .file-upload {
+        background-color: #717784;
+
+    }
+    .text-muted {
+        color: #afafaf!important;
+    }
+    .instructions {
+        color: #fff;
+    }
+}
+
+    body.darkmode {
+        background-color: #212329;
+        color: #888888;
+    }
+    h1.darkmode, h2.darkmode, h3.darkmode, h4.darkmode, h5.darkmode, p.darkmode, #pro.darkmode {
+        color: #fff!important;
+    }
+    #nav.darkmode {
+        background-color: #363940!important;
+    }
+    #common.darkmode {
+        background-color: #4b515d;
+        color: #a9a9a9;
+    }
+    #footer.darkmode {
+        background-color: #111215!important;
+    }
+    #landing.darkmode {
+        background-color: #3c4048;
+    }
+
+    a.lightmode {
+        color: #007bff;
+    }
+    body.lightmode {
+        background-color: #fff;
+        color: #212529;
+    }
+    h1.lightmode, h2.lightmode, h3.lightmode, h4.lightmode, h5.lightmode, p.lightmode, #pro.lightmode {
+        color: #212529!important;
+    }
+    #nav.lightmode {
+        background-color: #4b515d!important;
+    }
+    #common.lightmode {
+        background-color: #e9ecef;
+        color: #212529;
+    }
+    #footer.lightmode {
+        background-color: #0d47a1!important;
+    }
+    #landing.lightmode {
+        background-color: #fff;
+    }
