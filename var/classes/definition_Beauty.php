@@ -5,10 +5,7 @@
  * Variants: no
  *
  * Fields Summary:
- * - Makeup [objectbricks]
- * - Skincare [objectbricks]
- * - Haircare [objectbricks]
- * - Perfumes [objectbricks]
+ * - category [objectbricks]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -17,7 +14,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Beauty',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1672739741,
+   'modificationDate' => 1672988920,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -67,8 +64,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'Makeup',
-             'title' => 'Makeup',
+             'name' => 'category',
+             'title' => 'Category',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -87,84 +84,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'allowedTypes' => 
             array (
-            ),
-             'maxItems' => NULL,
-             'border' => false,
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'Skincare',
-             'title' => 'Skincare',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'objectbricks',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'allowedTypes' => 
-            array (
-            ),
-             'maxItems' => NULL,
-             'border' => false,
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'Haircare',
-             'title' => 'Haircare',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'objectbricks',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'allowedTypes' => 
-            array (
-            ),
-             'maxItems' => NULL,
-             'border' => false,
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'Perfumes',
-             'title' => 'Perfumes',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'objectbricks',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'allowedTypes' => 
-            array (
+              0 => 'haircare',
+              1 => 'Makeup',
+              2 => 'Perfume',
+              3 => 'skincare',
             ),
              'maxItems' => NULL,
              'border' => false,

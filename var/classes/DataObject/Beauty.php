@@ -5,10 +5,7 @@
  * Variants: no
  *
  * Fields Summary:
- * - Makeup [objectbricks]
- * - Skincare [objectbricks]
- * - Haircare [objectbricks]
- * - Perfumes [objectbricks]
+ * - category [objectbricks]
  */
 
 namespace Pimcore\Model\DataObject;
@@ -24,10 +21,7 @@ class Beauty extends Concrete
 {
 protected $o_classId = "3";
 protected $o_className = "Beauty";
-protected $Makeup;
-protected $Skincare;
-protected $Haircare;
-protected $Perfumes;
+protected $category;
 
 
 /**
@@ -41,21 +35,21 @@ public static function create($values = array()) {
 }
 
 /**
-* @return \Pimcore\Model\DataObject\Beauty\Makeup
+* @return \Pimcore\Model\DataObject\Beauty\Category
 */
-public function getMakeup(): ?\Pimcore\Model\DataObject\Objectbrick
+public function getCategory(): ?\Pimcore\Model\DataObject\Objectbrick
 {
-	$data = $this->Makeup;
+	$data = $this->category;
 	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Beauty\\Makeup")) {
-			$data = new \Pimcore\Model\DataObject\Beauty\Makeup($this, "Makeup");
-			$this->Makeup = $data;
+		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Beauty\\Category")) {
+			$data = new \Pimcore\Model\DataObject\Beauty\Category($this, "category");
+			$this->category = $data;
 		} else {
 			return null;
 		}
 	}
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("Makeup");
+		$preValue = $this->preGetValue("category");
 		if ($preValue !== null) {
 			return $preValue;
 		}
@@ -65,126 +59,15 @@ public function getMakeup(): ?\Pimcore\Model\DataObject\Objectbrick
 }
 
 /**
-* Set Makeup - Makeup
-* @param \Pimcore\Model\DataObject\Objectbrick|null $Makeup
+* Set category - Category
+* @param \Pimcore\Model\DataObject\Objectbrick|null $category
 * @return \Pimcore\Model\DataObject\Beauty
 */
-public function setMakeup(?\Pimcore\Model\DataObject\Objectbrick $Makeup)
+public function setCategory(?\Pimcore\Model\DataObject\Objectbrick $category)
 {
 	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("Makeup");
-	$this->Makeup = $fd->preSetData($this, $Makeup);
-	return $this;
-}
-
-/**
-* @return \Pimcore\Model\DataObject\Beauty\Skincare
-*/
-public function getSkincare(): ?\Pimcore\Model\DataObject\Objectbrick
-{
-	$data = $this->Skincare;
-	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Beauty\\Skincare")) {
-			$data = new \Pimcore\Model\DataObject\Beauty\Skincare($this, "Skincare");
-			$this->Skincare = $data;
-		} else {
-			return null;
-		}
-	}
-	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("Skincare");
-		if ($preValue !== null) {
-			return $preValue;
-		}
-	}
-
-	return $data;
-}
-
-/**
-* Set Skincare - Skincare
-* @param \Pimcore\Model\DataObject\Objectbrick|null $Skincare
-* @return \Pimcore\Model\DataObject\Beauty
-*/
-public function setSkincare(?\Pimcore\Model\DataObject\Objectbrick $Skincare)
-{
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("Skincare");
-	$this->Skincare = $fd->preSetData($this, $Skincare);
-	return $this;
-}
-
-/**
-* @return \Pimcore\Model\DataObject\Beauty\Haircare
-*/
-public function getHaircare(): ?\Pimcore\Model\DataObject\Objectbrick
-{
-	$data = $this->Haircare;
-	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Beauty\\Haircare")) {
-			$data = new \Pimcore\Model\DataObject\Beauty\Haircare($this, "Haircare");
-			$this->Haircare = $data;
-		} else {
-			return null;
-		}
-	}
-	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("Haircare");
-		if ($preValue !== null) {
-			return $preValue;
-		}
-	}
-
-	return $data;
-}
-
-/**
-* Set Haircare - Haircare
-* @param \Pimcore\Model\DataObject\Objectbrick|null $Haircare
-* @return \Pimcore\Model\DataObject\Beauty
-*/
-public function setHaircare(?\Pimcore\Model\DataObject\Objectbrick $Haircare)
-{
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("Haircare");
-	$this->Haircare = $fd->preSetData($this, $Haircare);
-	return $this;
-}
-
-/**
-* @return \Pimcore\Model\DataObject\Beauty\Perfumes
-*/
-public function getPerfumes(): ?\Pimcore\Model\DataObject\Objectbrick
-{
-	$data = $this->Perfumes;
-	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Beauty\\Perfumes")) {
-			$data = new \Pimcore\Model\DataObject\Beauty\Perfumes($this, "Perfumes");
-			$this->Perfumes = $data;
-		} else {
-			return null;
-		}
-	}
-	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("Perfumes");
-		if ($preValue !== null) {
-			return $preValue;
-		}
-	}
-
-	return $data;
-}
-
-/**
-* Set Perfumes - Perfumes
-* @param \Pimcore\Model\DataObject\Objectbrick|null $Perfumes
-* @return \Pimcore\Model\DataObject\Beauty
-*/
-public function setPerfumes(?\Pimcore\Model\DataObject\Objectbrick $Perfumes)
-{
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("Perfumes");
-	$this->Perfumes = $fd->preSetData($this, $Perfumes);
+	$fd = $this->getClass()->getFieldDefinition("category");
+	$this->category = $fd->preSetData($this, $category);
 	return $this;
 }
 

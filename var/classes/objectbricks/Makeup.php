@@ -2,7 +2,10 @@
 
 /**
  * Fields Summary:
- * - FaceMask [multiselect]
+ * - price [slider]
+ * - options [multiselect]
+ * - size [slider]
+ * - brand [multiselect]
  */
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
@@ -11,7 +14,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
-   'group' => '',
+   'group' => 'beauty',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => NULL,
@@ -43,9 +46,37 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
+             'name' => 'price',
+             'title' => 'Price',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'slider',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'height' => '',
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'vertical' => false,
+             'increment' => NULL,
+             'decimalPrecision' => NULL,
+          )),
+          1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Multiselect::__set_state(array(
-             'name' => 'FaceMask',
-             'title' => 'Face Mask',
+             'name' => 'options',
+             'title' => 'Options',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -66,23 +97,97 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             array (
               0 => 
               array (
-                'key' => 'Bronzer',
-                'value' => 'Bronzer',
+                'key' => 'lipstick',
+                'value' => 'lipstick',
               ),
               1 => 
               array (
-                'key' => 'Primer',
-                'value' => 'Primer',
+                'key' => 'nailpaint',
+                'value' => 'nailpaint',
               ),
               2 => 
               array (
-                'key' => 'Concealer',
-                'value' => 'Concealer',
+                'key' => 'eyeliner',
+                'value' => 'concealer',
               ),
               3 => 
               array (
-                'key' => 'Foundation',
-                'value' => 'Foundation',
+                'key' => 'compact',
+                'value' => 'primer',
+              ),
+            ),
+             'width' => '',
+             'height' => '',
+             'maxItems' => NULL,
+             'renderType' => 'list',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'dynamicOptions' => false,
+          )),
+          2 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
+             'name' => 'size',
+             'title' => 'Size',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'slider',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'height' => '',
+             'minValue' => 10.0,
+             'maxValue' => 400.0,
+             'vertical' => false,
+             'increment' => 10.0,
+             'decimalPrecision' => NULL,
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Multiselect::__set_state(array(
+             'name' => 'brand',
+             'title' => 'Brand',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'multiselect',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'lakme',
+                'value' => 'lahme',
+              ),
+              1 => 
+              array (
+                'key' => 'maybelline',
+                'value' => 'maybelline',
+              ),
+              2 => 
+              array (
+                'key' => 'swiss beauty',
+                'value' => 'swiss beauty',
               ),
             ),
              'width' => '',
@@ -123,5 +228,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
   ),
    'classDefinitions' => 
   array (
+    0 => 
+    array (
+      'classname' => 'Beauty',
+      'fieldname' => 'category',
+    ),
   ),
 ));
