@@ -1010,6 +1010,7 @@ b085c4,127.0.0.1,GET,http://ecommerce/admin/notification/find-last-unread?_dc=16
 978610,127.0.0.1,GET,http://ecommerce/admin/asset/download-image-thumbnail?config=%7B%22format%22%3A%22JPEG%22%2C%22resize_mode%22%3A%22resize%22%2C%22width%22%3A200%2C%22height%22%3A200%2C%22quality%22%3Anull%7D&id=14,1673261809,,200
 1c2cdd,127.0.0.1,GET,http://ecommerce/admin/notification/find-last-unread?_dc=1673261820472&lastUpdate=1673261790,1673261820,,200
 2dc257,127.0.0.1,GET,http://ecommerce/admin/notification/find-last-unread?_dc=1673261850472&lastUpdate=1673261820,1673261850,,200
+<<<<<<< HEAD
 2d62dc,127.0.0.1,GET,http://ecommerce/admin/notification/find-last-unread?_dc=1673262424867&lastUpdate=1673261850,1673262424,,200
 f8f8bf,127.0.0.1,GET,http://ecommerce/admin/misc/get-valid-filename?_dc=1673262432865&type=asset&value=footwear,1673262432,,200
 a57d0d,127.0.0.1,POST,http://ecommerce/admin/asset/add-folder,1673262432,,200
@@ -3017,3 +3018,5 @@ d98c11,127.0.0.1,GET,http://ecommerce/admin/?_dc=1673346063&perspective=,1673347
 8f759f,127.0.0.1,GET,http://ecommerce/admin/misc/ping?_dc=1673347444419,1673347444,,200
 d1439d,127.0.0.1,GET,http://ecommerce/admin/notification/find-last-unread?_dc=1673347444430&lastUpdate=1673347414,1673347444,,200
 1f0622,127.0.0.1,GET,http://ecommerce/admin/notification/find-last-unread?_dc=1673347474419&lastUpdate=1673347444,1673347474,,200
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d

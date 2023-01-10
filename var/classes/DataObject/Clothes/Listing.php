@@ -42,6 +42,7 @@ public function filterByPrice ($data, $operator = '=')
 	return $this;
 }
 
+<<<<<<< HEAD
 /**
 * Filter by gender (Gender)
 * @param string|int|float|array|Model\Element\ElementInterface $data  comparison data, can be scalar or array (if operator is e.g. "IN (?)")
@@ -54,6 +55,8 @@ public function filterByGender ($data, $operator = '=')
 	return $this;
 }
 
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 
 
 }

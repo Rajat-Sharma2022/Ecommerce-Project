@@ -2405,6 +2405,7 @@ AUTOCREATE
 2023-01-09T16:26:49+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\Asset\AssetController::downloadImageThumbnailAction|pimcore_admin_asset_downloadimagethumbnail|[]|{"id":"14","config":"{\"format\":\"JPEG\",\"resize_mode\":\"resize\",..."}
 2023-01-09T16:27:00+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\NotificationController::findLastUnreadAction|pimcore_admin_notification_findlastunread|[]|{"lastUpdate":"1673261790"}
 2023-01-09T16:27:30+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\NotificationController::findLastUnreadAction|pimcore_admin_notification_findlastunread|[]|{"lastUpdate":"1673261820"}
+<<<<<<< HEAD
 2023-01-09T16:37:04+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\NotificationController::findLastUnreadAction|pimcore_admin_notification_findlastunread|[]|{"lastUpdate":"1673261850"}
 2023-01-09T16:37:12+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\MiscController::getValidFilenameAction|pimcore_admin_misc_getvalidfilename|[]|{"value":"footwear","type":"asset"}
 2023-01-09T16:37:12+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\Asset\AssetController::addFolderAction|pimcore_admin_asset_addfolder|[]|{"parentId":"2","name":"footwear"}
@@ -4164,3 +4165,5 @@ AUTOCREATE
 2023-01-10T16:14:04+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\NotificationController::findLastUnreadAction|pimcore_admin_notification_findlastunread|[]|{"lastUpdate":"1673347414"}
 2023-01-10T16:14:04+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\MiscController::pingAction|pimcore_admin_misc_ping|[]|[]
 2023-01-10T16:14:34+0530 : 2|Pimcore\Bundle\AdminBundle\Controller\Admin\NotificationController::findLastUnreadAction|pimcore_admin_notification_findlastunread|[]|{"lastUpdate":"1673347444"}
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d

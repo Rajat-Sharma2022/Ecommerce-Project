@@ -1,3 +1,7 @@
 <?php //%5BC%5DApp%255CController%255CDefaultController%2523headerAction
 
+<<<<<<< HEAD
 return [PHP_INT_MAX, 1673344272];
+=======
+return [PHP_INT_MAX, 1673002475];
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d

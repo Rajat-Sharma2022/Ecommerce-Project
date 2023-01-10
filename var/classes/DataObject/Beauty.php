@@ -5,6 +5,7 @@
  * Variants: no
  *
  * Fields Summary:
+<<<<<<< HEAD
  * - price [numeric]
  * - descriptiom [wysiwyg]
  * - image [image]
@@ -12,6 +13,9 @@
  * - sku [input]
  * - startdate [date]
  * - enddate [date]
+=======
+ * - category [objectbricks]
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
  */
 
 namespace Pimcore\Model\DataObject;
@@ -33,6 +37,7 @@ class Beauty extends Concrete
 {
 protected $o_classId = "3";
 protected $o_className = "Beauty";
+<<<<<<< HEAD
 protected $price;
 protected $descriptiom;
 protected $image;
@@ -40,6 +45,9 @@ protected $category;
 protected $sku;
 protected $startdate;
 protected $enddate;
+=======
+protected $category;
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 
 
 /**
@@ -53,6 +61,7 @@ public static function create($values = array()) {
 }
 
 /**
+<<<<<<< HEAD
 * Get price - Price
 * @return float|null
 */
@@ -60,6 +69,23 @@ public function getPrice(): ?float
 {
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
 		$preValue = $this->preGetValue("price");
+=======
+* @return \Pimcore\Model\DataObject\Beauty\Category
+*/
+public function getCategory(): ?\Pimcore\Model\DataObject\Objectbrick
+{
+	$data = $this->category;
+	if (!$data) {
+		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Beauty\\Category")) {
+			$data = new \Pimcore\Model\DataObject\Beauty\Category($this, "category");
+			$this->category = $data;
+		} else {
+			return null;
+		}
+	}
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("category");
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 		if ($preValue !== null) {
 			return $preValue;
 		}
@@ -75,6 +101,7 @@ public function getPrice(): ?float
 }
 
 /**
+<<<<<<< HEAD
 * Set price - Price
 * @param float|null $price
 * @return \Pimcore\Model\DataObject\Beauty
@@ -291,6 +318,17 @@ public function setEnddate(?\Carbon\Carbon $enddate)
 {
 	$this->enddate = $enddate;
 
+=======
+* Set category - Category
+* @param \Pimcore\Model\DataObject\Objectbrick|null $category
+* @return \Pimcore\Model\DataObject\Beauty
+*/
+public function setCategory(?\Pimcore\Model\DataObject\Objectbrick $category)
+{
+	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
+	$fd = $this->getClass()->getFieldDefinition("category");
+	$this->category = $fd->preSetData($this, $category);
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 	return $this;
 }
 

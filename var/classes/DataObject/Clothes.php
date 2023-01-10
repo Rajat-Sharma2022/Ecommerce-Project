@@ -9,7 +9,10 @@
  * - sku [input]
  * - price [numeric]
  * - color [rgbaColor]
+<<<<<<< HEAD
  * - gender [select]
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
  */
 
 namespace Pimcore\Model\DataObject;
@@ -21,7 +24,10 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 * @method static \Pimcore\Model\DataObject\Clothes\Listing getList(array $config = [])
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getBySku($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByPrice($value, $limit = 0, $offset = 0, $objectTypes = null)
+<<<<<<< HEAD
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByGender($value, $limit = 0, $offset = 0, $objectTypes = null)
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 */
 
 class Clothes extends Concrete
@@ -32,7 +38,10 @@ protected $options;
 protected $sku;
 protected $price;
 protected $color;
+<<<<<<< HEAD
 protected $gender;
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 
 
 /**
@@ -185,6 +194,7 @@ public function setColor(?\Pimcore\Model\DataObject\Data\RgbaColor $color)
 	return $this;
 }
 
+<<<<<<< HEAD
 /**
 * Get gender - Gender
 * @return string|null
@@ -219,5 +229,7 @@ public function setGender(?string $gender)
 	return $this;
 }
 
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 }
 

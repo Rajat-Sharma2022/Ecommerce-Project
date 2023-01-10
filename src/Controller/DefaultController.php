@@ -25,6 +25,7 @@ class DefaultController extends FrontendController
     {
         return $this->render('default/header.html.twig');
     }
+<<<<<<< HEAD
 
      /**
      * @param Request $request
@@ -34,4 +35,6 @@ class DefaultController extends FrontendController
     {
         return $this->render('default/footer.html.twig');
     }
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 }

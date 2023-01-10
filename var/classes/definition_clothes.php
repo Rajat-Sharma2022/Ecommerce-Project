@@ -9,7 +9,10 @@
  * - sku [input]
  * - price [numeric]
  * - color [rgbaColor]
+<<<<<<< HEAD
  * - gender [select]
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -18,7 +21,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'clothes',
    'description' => '',
    'creationDate' => 0,
+<<<<<<< HEAD
    'modificationDate' => 1673336599,
+=======
+   'modificationDate' => 1673260263,
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -178,6 +185,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'width' => '',
           )),
+<<<<<<< HEAD
           4 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
              'name' => 'gender',
@@ -219,6 +227,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'dynamicOptions' => false,
              'defaultValueGenerator' => '',
           )),
+=======
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
         ),
          'locked' => false,
          'blockedVarsForExport' => 

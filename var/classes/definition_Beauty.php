@@ -5,6 +5,7 @@
  * Variants: no
  *
  * Fields Summary:
+<<<<<<< HEAD
  * - price [numeric]
  * - descriptiom [wysiwyg]
  * - image [image]
@@ -12,6 +13,9 @@
  * - sku [input]
  * - startdate [date]
  * - enddate [date]
+=======
+ * - category [objectbricks]
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -20,7 +24,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Beauty',
    'description' => '',
    'creationDate' => 0,
+<<<<<<< HEAD
    'modificationDate' => 1673340460,
+=======
+   'modificationDate' => 1672988920,
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -69,6 +77,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
+<<<<<<< HEAD
           Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
              'name' => 'price',
              'title' => 'Price',
@@ -214,6 +223,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
              'name' => 'startdate',
              'title' => 'startdate',
+=======
+          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+             'name' => 'category',
+             'title' => 'Category',
+>>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -255,6 +269,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
+              0 => 'haircare',
+              1 => 'Makeup',
+              2 => 'Perfume',
+              3 => 'skincare',
             ),
              'queryColumnType' => 'bigint(20)',
              'columnType' => 'bigint(20)',
