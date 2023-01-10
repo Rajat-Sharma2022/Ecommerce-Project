@@ -5,19 +5,20 @@
  * Variants: no
  *
  * Fields Summary:
+ * - options [objectbricks]
  * - sku [input]
  * - price [numeric]
  * - color [rgbaColor]
- * - category [objectbricks]
+ * - gender [select]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '5',
+   'id' => '4',
    'name' => 'clothes',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1673261729,
+   'modificationDate' => 1673336599,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -66,6 +67,34 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+             'name' => 'options',
+             'title' => 'Options',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'objectbricks',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'allowedTypes' => 
+            array (
+              0 => 'menClothing',
+              1 => 'womenClothing',
+            ),
+             'maxItems' => NULL,
+             'border' => false,
+          )),
+          1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'sku',
              'title' => 'Sku',
@@ -96,7 +125,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
-          1 => 
+          2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
              'name' => 'price',
              'title' => 'Price',
@@ -127,7 +156,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'decimalPrecision' => NULL,
              'defaultValueGenerator' => '',
           )),
-          2 => 
+          3 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\RgbaColor::__set_state(array(
              'name' => 'color',
              'title' => 'Color',
@@ -149,10 +178,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'width' => '',
           )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'category',
-             'title' => 'Category',
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'gender',
+             'title' => 'Gender',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -161,7 +190,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'objectbricks',
+             'fieldtype' => 'select',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -169,11 +198,26 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'allowedTypes' => 
+             'options' => 
             array (
+              0 => 
+              array (
+                'key' => 'M',
+                'value' => 'm',
+              ),
+              1 => 
+              array (
+                'key' => 'F',
+                'value' => 'F',
+              ),
             ),
-             'maxItems' => NULL,
-             'border' => false,
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,
