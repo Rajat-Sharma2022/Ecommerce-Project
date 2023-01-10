@@ -31,5 +31,6 @@ class Kernel extends PimcoreKernel
         if (class_exists('\\AppBundle\\AppBundle')) {
             $collection->addBundle(new \AppBundle\AppBundle);
         }
+        
     }
 }
