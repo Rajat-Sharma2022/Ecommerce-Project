@@ -2,10 +2,9 @@
 
 /**
  * Fields Summary:
- * - price [slider]
- * - quantity [quantityValue]
- * - options [multiselect]
+ * - options [select]
  * - brand [select]
+ * - quantity [quantityValue]
  */
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
@@ -46,9 +45,9 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
-             'name' => 'price',
-             'title' => 'Price',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'options',
+             'title' => 'Options',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -57,7 +56,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'slider',
+             'fieldtype' => 'select',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -65,15 +64,79 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'toner',
+                'value' => 'toner',
+              ),
+              1 => 
+              array (
+                'key' => 'sunscreen',
+                'value' => 'sunscreen',
+              ),
+              2 => 
+              array (
+                'key' => 'mosturizer',
+                'value' => 'mosturizer',
+              ),
+            ),
              'width' => '',
-             'height' => '',
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'vertical' => false,
-             'increment' => NULL,
-             'decimalPrecision' => NULL,
+             'defaultValue' => '',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
           )),
           1 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'brand',
+             'title' => 'Brand',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'select',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'himalya',
+                'value' => 'himalya',
+              ),
+              1 => 
+              array (
+                'key' => 'lakme',
+                'value' => 'lakme',
+              ),
+              2 => 
+              array (
+                'key' => 'ponds',
+                'value' => 'ponds',
+              ),
+            ),
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
+          )),
+          2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
              'name' => 'quantity',
              'title' => 'Quantity',
@@ -102,104 +165,12 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'integer' => false,
              'unsigned' => false,
-             'minValue' => 100,
-             'maxValue' => 400,
-             'unique' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => NULL,
              'decimalSize' => NULL,
              'decimalPrecision' => NULL,
              'autoConvert' => false,
-             'defaultValueGenerator' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Multiselect::__set_state(array(
-             'name' => 'options',
-             'title' => 'Options',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'multiselect',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'options' => 
-            array (
-              0 => 
-              array (
-                'key' => 'toner',
-                'value' => 'shampoo and conditioner',
-              ),
-              1 => 
-              array (
-                'key' => 'sunscreen',
-                'value' => 'sunscreen',
-              ),
-              2 => 
-              array (
-                'key' => 'moisturiser',
-                'value' => 'moisturiser',
-              ),
-            ),
-             'width' => '',
-             'height' => '',
-             'maxItems' => NULL,
-             'renderType' => 'list',
-             'optionsProviderClass' => '',
-             'optionsProviderData' => '',
-             'dynamicOptions' => false,
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
-             'name' => 'brand',
-             'title' => 'Brand',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'select',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'options' => 
-            array (
-              0 => 
-              array (
-                'key' => 'himalya',
-                'value' => 'plum',
-              ),
-              1 => 
-              array (
-                'key' => 'lakme',
-                'value' => 'himalya',
-              ),
-              2 => 
-              array (
-                'key' => 'ponds',
-                'value' => 'lakme',
-              ),
-            ),
-             'width' => '',
-             'defaultValue' => '',
-             'optionsProviderClass' => '',
-             'optionsProviderData' => '',
-             'columnLength' => 190,
-             'dynamicOptions' => false,
              'defaultValueGenerator' => '',
           )),
         ),
@@ -234,7 +205,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
   array (
     0 => 
     array (
-      'classname' => 'Beauty',
+      'classname' => 'beautyProduct',
       'fieldname' => 'category',
     ),
   ),

@@ -549,6 +549,10 @@ return [
         '/admin/gdpr/pimcore-users/search-users' => [[['_route' => 'pimcore_admin_gdpr_pimcoreusers_searchusers', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\PimcoreUsersController::searchUsersAction'], null, ['GET' => 0], null, false, false, null]],
         '/admin/gdpr/pimcore-users/export-user-data' => [[['_route' => 'pimcore_admin_gdpr_pimcoreusers_exportuserdata', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\PimcoreUsersController::exportUserDataAction'], null, ['GET' => 0], null, false, false, null]],
         '/admin/gdpr/sent-mail/export' => [[['_route' => 'pimcore_admin_gdpr_sentmail_exportdataobject', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\SentMailController::exportDataObjectAction'], null, ['GET' => 0], null, false, false, null]],
+        '/electronic' => [[['_route' => 'electronic', '_controller' => 'App\\Controller\\DefaultController::showElectronic'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/footwear' => [[['_route' => 'footwear', '_controller' => 'App\\Controller\\DefaultController::showFootwear'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/beauty' => [[['_route' => 'beauty', '_controller' => 'App\\Controller\\DefaultController::showBeautyProducts'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/clothes' => [[['_route' => 'clothes', '_controller' => 'App\\Controller\\MyController::showClothes'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

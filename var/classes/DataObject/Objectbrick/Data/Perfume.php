@@ -16,7 +16,7 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 
 class Perfume extends DataObject\Objectbrick\Data\AbstractData
 {
-protected $type = "Perfume";
+protected $type = "perfume";
 protected $fragrance;
 protected $brand;
 protected $bundle;
@@ -100,7 +100,7 @@ public function setBrand (?string $brand)
 }
 
 /**
-* Get bundle - Pack  of
+* Get bundle - Bundle
 * @return string|null
 */
 public function getBundle(): ?string
@@ -121,7 +121,7 @@ public function getBundle(): ?string
 }
 
 /**
-* Set bundle - Pack  of
+* Set bundle - Bundle
 * @param string|null $bundle
 * @return \Pimcore\Model\DataObject\Objectbrick\Data\Perfume
 */

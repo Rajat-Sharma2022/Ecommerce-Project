@@ -5,11 +5,16 @@
  * Variants: no
  *
  * Fields Summary:
- * - category [objectbricks]
- * - description [input]
- * - price [numeric]
- * - image [image]
  * - sku [input]
+ * - footWearType [select]
+ * - size [select]
+ * - photo [image]
+ * - description [input]
+ * - brand [select]
+ * - price [numeric]
+ * - color [input]
+ * - material [input]
+ * - gender [select]
  */
 
 namespace Pimcore\Model\DataObject;
@@ -19,21 +24,32 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 
 /**
 * @method static \Pimcore\Model\DataObject\Footwear\Listing getList(array $config = [])
-* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByDescription($value, $limit = 0, $offset = 0, $objectTypes = null)
-* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByPrice($value, $limit = 0, $offset = 0, $objectTypes = null)
-* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByImage($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getBySku($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByFootWearType($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getBySize($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByPhoto($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByDescription($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByBrand($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByPrice($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByColor($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByMaterial($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Footwear\Listing|\Pimcore\Model\DataObject\Footwear|null getByGender($value, $limit = 0, $offset = 0, $objectTypes = null)
 */
 
 class Footwear extends Concrete
 {
-protected $o_classId = "5";
+protected $o_classId = "6";
 protected $o_className = "footwear";
-protected $category;
-protected $description;
-protected $price;
-protected $image;
 protected $sku;
+protected $footWearType;
+protected $size;
+protected $photo;
+protected $description;
+protected $brand;
+protected $price;
+protected $color;
+protected $material;
+protected $gender;
 
 
 /**
@@ -47,39 +63,138 @@ public static function create($values = array()) {
 }
 
 /**
-* @return \Pimcore\Model\DataObject\Footwear\Category
+* Get sku - Sku
+* @return string|null
 */
-public function getCategory(): ?\Pimcore\Model\DataObject\Objectbrick
+public function getSku(): ?string
 {
-	$data = $this->category;
-	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Footwear\\Category")) {
-			$data = new \Pimcore\Model\DataObject\Footwear\Category($this, "category");
-			$this->category = $data;
-		} else {
-			return null;
-		}
-	}
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("category");
+		$preValue = $this->preGetValue("sku");
 		if ($preValue !== null) {
 			return $preValue;
 		}
+	}
+
+	$data = $this->sku;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
 	}
 
 	return $data;
 }
 
 /**
-* Set category - category
-* @param \Pimcore\Model\DataObject\Objectbrick|null $category
+* Set sku - Sku
+* @param string|null $sku
 * @return \Pimcore\Model\DataObject\Footwear
 */
-public function setCategory(?\Pimcore\Model\DataObject\Objectbrick $category)
+public function setSku(?string $sku)
 {
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("category");
-	$this->category = $fd->preSetData($this, $category);
+	$this->sku = $sku;
+
+	return $this;
+}
+
+/**
+* Get footWearType - Foot Wear Type
+* @return string|null
+*/
+public function getFootWearType(): ?string
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("footWearType");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->footWearType;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set footWearType - Foot Wear Type
+* @param string|null $footWearType
+* @return \Pimcore\Model\DataObject\Footwear
+*/
+public function setFootWearType(?string $footWearType)
+{
+	$this->footWearType = $footWearType;
+
+	return $this;
+}
+
+/**
+* Get size - Size
+* @return string|null
+*/
+public function getSize(): ?string
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("size");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->size;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set size - Size
+* @param string|null $size
+* @return \Pimcore\Model\DataObject\Footwear
+*/
+public function setSize(?string $size)
+{
+	$this->size = $size;
+
+	return $this;
+}
+
+/**
+* Get photo - Photo
+* @return \Pimcore\Model\Asset\Image|null
+*/
+public function getPhoto(): ?\Pimcore\Model\Asset\Image
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("photo");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->photo;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set photo - Photo
+* @param \Pimcore\Model\Asset\Image|null $photo
+* @return \Pimcore\Model\DataObject\Footwear
+*/
+public function setPhoto(?\Pimcore\Model\Asset\Image $photo)
+{
+	$this->photo = $photo;
+
 	return $this;
 }
 
@@ -113,6 +228,40 @@ public function getDescription(): ?string
 public function setDescription(?string $description)
 {
 	$this->description = $description;
+
+	return $this;
+}
+
+/**
+* Get brand - Brand
+* @return string|null
+*/
+public function getBrand(): ?string
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("brand");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->brand;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set brand - Brand
+* @param string|null $brand
+* @return \Pimcore\Model\DataObject\Footwear
+*/
+public function setBrand(?string $brand)
+{
+	$this->brand = $brand;
 
 	return $this;
 }
@@ -153,19 +302,19 @@ public function setPrice(?float $price)
 }
 
 /**
-* Get image - Image
-* @return \Pimcore\Model\Asset\Image|null
+* Get color - Color
+* @return string|null
 */
-public function getImage(): ?\Pimcore\Model\Asset\Image
+public function getColor(): ?string
 {
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("image");
+		$preValue = $this->preGetValue("color");
 		if ($preValue !== null) {
 			return $preValue;
 		}
 	}
 
-	$data = $this->image;
+	$data = $this->color;
 
 	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
 		return $data->getPlain();
@@ -175,31 +324,31 @@ public function getImage(): ?\Pimcore\Model\Asset\Image
 }
 
 /**
-* Set image - Image
-* @param \Pimcore\Model\Asset\Image|null $image
+* Set color - Color
+* @param string|null $color
 * @return \Pimcore\Model\DataObject\Footwear
 */
-public function setImage(?\Pimcore\Model\Asset\Image $image)
+public function setColor(?string $color)
 {
-	$this->image = $image;
+	$this->color = $color;
 
 	return $this;
 }
 
 /**
-* Get sku - Sku
+* Get material - Material
 * @return string|null
 */
-public function getSku(): ?string
+public function getMaterial(): ?string
 {
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("sku");
+		$preValue = $this->preGetValue("material");
 		if ($preValue !== null) {
 			return $preValue;
 		}
 	}
 
-	$data = $this->sku;
+	$data = $this->material;
 
 	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
 		return $data->getPlain();
@@ -209,13 +358,47 @@ public function getSku(): ?string
 }
 
 /**
-* Set sku - Sku
-* @param string|null $sku
+* Set material - Material
+* @param string|null $material
 * @return \Pimcore\Model\DataObject\Footwear
 */
-public function setSku(?string $sku)
+public function setMaterial(?string $material)
 {
-	$this->sku = $sku;
+	$this->material = $material;
+
+	return $this;
+}
+
+/**
+* Get gender - Gender
+* @return string|null
+*/
+public function getGender(): ?string
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("gender");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->gender;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set gender - Gender
+* @param string|null $gender
+* @return \Pimcore\Model\DataObject\Footwear
+*/
+public function setGender(?string $gender)
+{
+	$this->gender = $gender;
 
 	return $this;
 }

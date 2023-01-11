@@ -538,4 +538,8 @@ return [
     'pimcore_admin_gdpr_pimcoreusers_exportuserdata' => [[], ['_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\PimcoreUsersController::exportUserDataAction'], [], [['text', '/admin/gdpr/pimcore-users/export-user-data']], [], [], []],
     'pimcore_admin_gdpr_sentmail_exportdataobject' => [[], ['_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\GDPR\\SentMailController::exportDataObjectAction'], [], [['text', '/admin/gdpr/sent-mail/export']], [], [], []],
     'pimcore_admin_page_display_preview_image' => [[], ['_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\Document\\PageController::displayPreviewImageAction'], [], [['text', '/admin/page/display-preview-image']], [], [], []],
+    'electronic' => [[], ['_controller' => 'App\\Controller\\DefaultController::showElectronic'], [], [['text', '/electronic']], [], [], []],
+    'footwear' => [[], ['_controller' => 'App\\Controller\\DefaultController::showFootwear'], [], [['text', '/footwear']], [], [], []],
+    'beauty' => [[], ['_controller' => 'App\\Controller\\DefaultController::showBeautyProducts'], [], [['text', '/beauty']], [], [], []],
+    'clothes' => [[], ['_controller' => 'App\\Controller\\MyController::showClothes'], [], [['text', '/clothes']], [], [], []],
 ];

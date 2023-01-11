@@ -5,10 +5,12 @@
  * Variants: no
  *
  * Fields Summary:
- * - options [objectbricks]
  * - sku [input]
  * - price [numeric]
- * - color [rgbaColor]
+ * - color [input]
+ * - category [objectbricks]
+ * - description [input]
+ * - photo [image]
  * - gender [select]
  */
 
@@ -21,17 +23,22 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 * @method static \Pimcore\Model\DataObject\Clothes\Listing getList(array $config = [])
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getBySku($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByPrice($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByColor($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByDescription($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByPhoto($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByGender($value, $limit = 0, $offset = 0, $objectTypes = null)
 */
 
 class Clothes extends Concrete
 {
-protected $o_classId = "4";
+protected $o_classId = "5";
 protected $o_className = "clothes";
-protected $options;
 protected $sku;
 protected $price;
 protected $color;
+protected $category;
+protected $description;
+protected $photo;
 protected $gender;
 
 
@@ -43,43 +50,6 @@ public static function create($values = array()) {
 	$object = new static();
 	$object->setValues($values);
 	return $object;
-}
-
-/**
-* @return \Pimcore\Model\DataObject\Clothes\Options
-*/
-public function getOptions(): ?\Pimcore\Model\DataObject\Objectbrick
-{
-	$data = $this->options;
-	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Clothes\\Options")) {
-			$data = new \Pimcore\Model\DataObject\Clothes\Options($this, "options");
-			$this->options = $data;
-		} else {
-			return null;
-		}
-	}
-	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("options");
-		if ($preValue !== null) {
-			return $preValue;
-		}
-	}
-
-	return $data;
-}
-
-/**
-* Set options - Options
-* @param \Pimcore\Model\DataObject\Objectbrick|null $options
-* @return \Pimcore\Model\DataObject\Clothes
-*/
-public function setOptions(?\Pimcore\Model\DataObject\Objectbrick $options)
-{
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("options");
-	$this->options = $fd->preSetData($this, $options);
-	return $this;
 }
 
 /**
@@ -153,9 +123,9 @@ public function setPrice(?float $price)
 
 /**
 * Get color - Color
-* @return \Pimcore\Model\DataObject\Data\RgbaColor|null
+* @return string|null
 */
-public function getColor(): ?\Pimcore\Model\DataObject\Data\RgbaColor
+public function getColor(): ?string
 {
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
 		$preValue = $this->preGetValue("color");
@@ -175,12 +145,117 @@ public function getColor(): ?\Pimcore\Model\DataObject\Data\RgbaColor
 
 /**
 * Set color - Color
-* @param \Pimcore\Model\DataObject\Data\RgbaColor|null $color
+* @param string|null $color
 * @return \Pimcore\Model\DataObject\Clothes
 */
-public function setColor(?\Pimcore\Model\DataObject\Data\RgbaColor $color)
+public function setColor(?string $color)
 {
 	$this->color = $color;
+
+	return $this;
+}
+
+/**
+* @return \Pimcore\Model\DataObject\Clothes\Category
+*/
+public function getCategory(): ?\Pimcore\Model\DataObject\Objectbrick
+{
+	$data = $this->category;
+	if (!$data) {
+		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Clothes\\Category")) {
+			$data = new \Pimcore\Model\DataObject\Clothes\Category($this, "category");
+			$this->category = $data;
+		} else {
+			return null;
+		}
+	}
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("category");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	return $data;
+}
+
+/**
+* Set category - Category
+* @param \Pimcore\Model\DataObject\Objectbrick|null $category
+* @return \Pimcore\Model\DataObject\Clothes
+*/
+public function setCategory(?\Pimcore\Model\DataObject\Objectbrick $category)
+{
+	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
+	$fd = $this->getClass()->getFieldDefinition("category");
+	$this->category = $fd->preSetData($this, $category);
+	return $this;
+}
+
+/**
+* Get description - Description
+* @return string|null
+*/
+public function getDescription(): ?string
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("description");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->description;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set description - Description
+* @param string|null $description
+* @return \Pimcore\Model\DataObject\Clothes
+*/
+public function setDescription(?string $description)
+{
+	$this->description = $description;
+
+	return $this;
+}
+
+/**
+* Get photo - Photo
+* @return \Pimcore\Model\Asset\Image|null
+*/
+public function getPhoto(): ?\Pimcore\Model\Asset\Image
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("photo");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->photo;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set photo - Photo
+* @param \Pimcore\Model\Asset\Image|null $photo
+* @return \Pimcore\Model\DataObject\Clothes
+*/
+public function setPhoto(?\Pimcore\Model\Asset\Image $photo)
+{
+	$this->photo = $photo;
 
 	return $this;
 }

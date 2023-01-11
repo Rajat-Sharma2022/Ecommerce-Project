@@ -2,9 +2,8 @@
 
 /**
  * Fields Summary:
- * - price [slider]
- * - brand [multiselect]
- * - Quantity [quantityValue]
+ * - brand [select]
+ * - quantity [quantityValue]
  */
 
 namespace Pimcore\Model\DataObject\Objectbrick\Data;
@@ -14,12 +13,11 @@ use Pimcore\Model\DataObject\Exception\InheritanceParentNotFoundException;
 use Pimcore\Model\DataObject\PreGetValueHookInterface;
 
 
-class Haircare extends \price
+class Haircare extends DataObject\Objectbrick\Data\AbstractData
 {
 protected $type = "haircare";
-protected $price;
 protected $brand;
-protected $Quantity;
+protected $quantity;
 
 
 /**
@@ -34,43 +32,10 @@ public function __construct(DataObject\Concrete $object)
 
 
 /**
-* Get price - Price
-* @return float|null
-*/
-public function getPrice(): ?float
-{
-	$data = $this->price;
-	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("price")->isEmpty($data)) {
-		try {
-			return $this->getValueFromParent("price");
-		} catch (InheritanceParentNotFoundException $e) {
-			// no data from parent available, continue ...
-		}
-	}
-	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
-		return $data->getPlain();
-	}
-
-	return $data;
-}
-
-/**
-* Set price - Price
-* @param float|null $price
-* @return \Pimcore\Model\DataObject\Objectbrick\Data\Haircare
-*/
-public function setPrice (?float $price)
-{
-	$this->price = $price;
-
-	return $this;
-}
-
-/**
 * Get brand - Brand
-* @return string[]|null
+* @return string|null
 */
-public function getBrand(): ?array
+public function getBrand(): ?string
 {
 	$data = $this->brand;
 	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("brand")->isEmpty($data)) {
@@ -89,10 +54,10 @@ public function getBrand(): ?array
 
 /**
 * Set brand - Brand
-* @param string[]|null $brand
+* @param string|null $brand
 * @return \Pimcore\Model\DataObject\Objectbrick\Data\Haircare
 */
-public function setBrand (?array $brand)
+public function setBrand (?string $brand)
 {
 	$this->brand = $brand;
 
@@ -100,15 +65,15 @@ public function setBrand (?array $brand)
 }
 
 /**
-* Get Quantity - Quantity
+* Get quantity - Quantity
 * @return \Pimcore\Model\DataObject\Data\QuantityValue|null
 */
 public function getQuantity(): ?\Pimcore\Model\DataObject\Data\QuantityValue
 {
-	$data = $this->Quantity;
-	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("Quantity")->isEmpty($data)) {
+	$data = $this->quantity;
+	if(\Pimcore\Model\DataObject::doGetInheritedValues($this->getObject()) && $this->getDefinition()->getFieldDefinition("quantity")->isEmpty($data)) {
 		try {
-			return $this->getValueFromParent("Quantity");
+			return $this->getValueFromParent("quantity");
 		} catch (InheritanceParentNotFoundException $e) {
 			// no data from parent available, continue ...
 		}
@@ -121,13 +86,13 @@ public function getQuantity(): ?\Pimcore\Model\DataObject\Data\QuantityValue
 }
 
 /**
-* Set Quantity - Quantity
-* @param \Pimcore\Model\DataObject\Data\QuantityValue|null $Quantity
+* Set quantity - Quantity
+* @param \Pimcore\Model\DataObject\Data\QuantityValue|null $quantity
 * @return \Pimcore\Model\DataObject\Objectbrick\Data\Haircare
 */
-public function setQuantity (?\Pimcore\Model\DataObject\Data\QuantityValue $Quantity)
+public function setQuantity (?\Pimcore\Model\DataObject\Data\QuantityValue $quantity)
 {
-	$this->Quantity = $Quantity;
+	$this->quantity = $quantity;
 
 	return $this;
 }

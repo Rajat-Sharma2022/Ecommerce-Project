@@ -2,15 +2,14 @@
 
 /**
  * Fields Summary:
- * - price [slider]
- * - brand [multiselect]
- * - Quantity [quantityValue]
+ * - brand [select]
+ * - quantity [quantityValue]
  */
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'dao' => NULL,
    'key' => 'haircare',
-   'parentClass' => 'price',
+   'parentClass' => '',
    'implementsInterfaces' => '',
    'title' => '',
    'group' => 'beauty',
@@ -45,35 +44,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
-             'name' => 'price',
-             'title' => 'Price',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'slider',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'width' => '',
-             'height' => '',
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'vertical' => false,
-             'increment' => NULL,
-             'decimalPrecision' => NULL,
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Multiselect::__set_state(array(
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
              'name' => 'brand',
              'title' => 'Brand',
              'tooltip' => '',
@@ -84,7 +55,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'multiselect',
+             'fieldtype' => 'select',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -96,31 +67,31 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             array (
               0 => 
               array (
-                'key' => 'pantene',
-                'value' => 'pantene',
+                'key' => 'Pantene',
+                'value' => 'Pantene',
               ),
               1 => 
               array (
-                'key' => 'sunsilk',
-                'value' => 'sunsilk',
+                'key' => 'Sunsilk',
+                'value' => 'Sunsilk',
               ),
               2 => 
               array (
-                'key' => 'LOreal',
-                'value' => 'LOreal',
+                'key' => 'Loreal',
+                'value' => 'Loreal',
               ),
             ),
              'width' => '',
-             'height' => '',
-             'maxItems' => NULL,
-             'renderType' => 'list',
+             'defaultValue' => '',
              'optionsProviderClass' => '',
              'optionsProviderData' => '',
+             'columnLength' => 190,
              'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
           )),
-          2 => 
+          1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-             'name' => 'Quantity',
+             'name' => 'quantity',
              'title' => 'Quantity',
              'tooltip' => '',
              'mandatory' => false,
@@ -147,9 +118,9 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'integer' => false,
              'unsigned' => false,
-             'minValue' => 100,
-             'maxValue' => 600,
-             'unique' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => NULL,
              'decimalSize' => NULL,
              'decimalPrecision' => NULL,
              'autoConvert' => false,
@@ -187,7 +158,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
   array (
     0 => 
     array (
-      'classname' => 'Beauty',
+      'classname' => 'beautyProduct',
       'fieldname' => 'category',
     ),
   ),

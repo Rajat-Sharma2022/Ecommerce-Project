@@ -1,2 +1,2 @@
 doctrine:
-    dbal: { connections: { default: { host: localhost, port: 3306, user: pimcore, password: pimcore, dbname: ecommerce_project, mapping_types: { enum: string, bit: boolean }, server_version: 8.0.31-0ubuntu0.20.04.2 } } }
+    dbal: { connections: { default: { host: localhost, port: 3306, user: pimuser, password: root, dbname: ecom_database, mapping_types: { enum: string, bit: boolean }, server_version: 8.0.31-0ubuntu0.20.04.2 } } }
