@@ -38,3 +38,14 @@ class DefaultController extends FrontendController
 =======
 >>>>>>> 562b9bf7067eb450b37191d10a3bd6e0c708cb9d
 }
+
+/**
+ * @param Request $request
+ * @return Response
+ */
+public function defaultAction(Request $request): Response
+{
+    return $this->render('default/aboutus.html.twig');
+}
+
+
