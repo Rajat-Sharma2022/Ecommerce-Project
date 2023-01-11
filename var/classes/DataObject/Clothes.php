@@ -5,10 +5,11 @@
  * Variants: no
  *
  * Fields Summary:
+ * - options [objectbricks]
  * - sku [input]
  * - price [numeric]
  * - color [rgbaColor]
- * - category [objectbricks]
+ * - gender [select]
  */
 
 namespace Pimcore\Model\DataObject;
@@ -20,16 +21,18 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 * @method static \Pimcore\Model\DataObject\Clothes\Listing getList(array $config = [])
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getBySku($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByPrice($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\Clothes\Listing|\Pimcore\Model\DataObject\Clothes|null getByGender($value, $limit = 0, $offset = 0, $objectTypes = null)
 */
 
 class Clothes extends Concrete
 {
-protected $o_classId = "5";
+protected $o_classId = "4";
 protected $o_className = "clothes";
+protected $options;
 protected $sku;
 protected $price;
 protected $color;
-protected $category;
+protected $gender;
 
 
 /**
@@ -40,6 +43,43 @@ public static function create($values = array()) {
 	$object = new static();
 	$object->setValues($values);
 	return $object;
+}
+
+/**
+* @return \Pimcore\Model\DataObject\Clothes\Options
+*/
+public function getOptions(): ?\Pimcore\Model\DataObject\Objectbrick
+{
+	$data = $this->options;
+	if (!$data) {
+		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Clothes\\Options")) {
+			$data = new \Pimcore\Model\DataObject\Clothes\Options($this, "options");
+			$this->options = $data;
+		} else {
+			return null;
+		}
+	}
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("options");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	return $data;
+}
+
+/**
+* Set options - Options
+* @param \Pimcore\Model\DataObject\Objectbrick|null $options
+* @return \Pimcore\Model\DataObject\Clothes
+*/
+public function setOptions(?\Pimcore\Model\DataObject\Objectbrick $options)
+{
+	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
+	$fd = $this->getClass()->getFieldDefinition("options");
+	$this->options = $fd->preSetData($this, $options);
+	return $this;
 }
 
 /**
@@ -146,39 +186,36 @@ public function setColor(?\Pimcore\Model\DataObject\Data\RgbaColor $color)
 }
 
 /**
-* @return \Pimcore\Model\DataObject\Clothes\Category
+* Get gender - Gender
+* @return string|null
 */
-public function getCategory(): ?\Pimcore\Model\DataObject\Objectbrick
+public function getGender(): ?string
 {
-	$data = $this->category;
-	if (!$data) {
-		if (\Pimcore\Tool::classExists("\\Pimcore\\Model\\DataObject\\Clothes\\Category")) {
-			$data = new \Pimcore\Model\DataObject\Clothes\Category($this, "category");
-			$this->category = $data;
-		} else {
-			return null;
-		}
-	}
 	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
-		$preValue = $this->preGetValue("category");
+		$preValue = $this->preGetValue("gender");
 		if ($preValue !== null) {
 			return $preValue;
 		}
+	}
+
+	$data = $this->gender;
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
 	}
 
 	return $data;
 }
 
 /**
-* Set category - Category
-* @param \Pimcore\Model\DataObject\Objectbrick|null $category
+* Set gender - Gender
+* @param string|null $gender
 * @return \Pimcore\Model\DataObject\Clothes
 */
-public function setCategory(?\Pimcore\Model\DataObject\Objectbrick $category)
+public function setGender(?string $gender)
 {
-	/** @var \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks $fd */
-	$fd = $this->getClass()->getFieldDefinition("category");
-	$this->category = $fd->preSetData($this, $category);
+	$this->gender = $gender;
+
 	return $this;
 }
 
