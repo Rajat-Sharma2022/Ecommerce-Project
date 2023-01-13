@@ -1243,6 +1243,9 @@
         <argument type="service" id=".service_locator.Z3eEsyj.App\Controller\Web2printController"/>
       </call>
     </service>
+    <service id="App\EventListeners\MyObjectListener" class="App\EventListeners\MyObjectListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_listener" event="pimcore.dataobject.preUpdate" method="beforeUpdate"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -3183,6 +3186,14 @@
         <argument type="collection">
           <argument type="service_closure" id="Pimcore\Bundle\AdminBundle\EventListener\TwoFactorListener"/>
           <argument>onAuthenticationAttempt</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>pimcore.dataobject.preUpdate</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="App\EventListeners\MyObjectListener"/>
+          <argument>beforeUpdate</argument>
         </argument>
         <argument>0</argument>
       </call>

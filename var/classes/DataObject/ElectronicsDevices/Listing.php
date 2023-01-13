@@ -66,6 +66,18 @@ public function filterByPhoto ($data, $operator = '=')
 	return $this;
 }
 
+/**
+* Filter by product (Product)
+* @param string|int|float|array|Model\Element\ElementInterface $data  comparison data, can be scalar or array (if operator is e.g. "IN (?)")
+* @param string $operator  SQL comparison operator, e.g. =, <, >= etc. You can use "?" as placeholder, e.g. "IN (?)"
+* @return static
+*/
+public function filterByProduct ($data, $operator = '=')
+{
+	$this->getClass()->getFieldDefinition("product")->addListingFilter($this, $data, $operator);
+	return $this;
+}
+
 
 
 }

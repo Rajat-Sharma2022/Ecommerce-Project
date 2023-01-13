@@ -58,6 +58,11 @@ services:
     App\Command\:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
+    
+    
+
+
+
 
 
 
@@ -73,3 +78,6 @@ services:
     # App\EventListener\TestListener:
     #     tags:
     #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
+    App\EventListeners\MyObjectListener:
+         tags:
+         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: beforeUpdate }

@@ -31,6 +31,56 @@ class MyController extends FrontendController
 
 
 
+     /**
+     * @Route("/gents", name="gents", methods={"GET","POST"})
+     */
+    public function showGentsClothes(Request $request): Response
+    {  //$object_array=[];
+        $items = new DataObject\Clothes\Listing();
+        $items->setOrderKey("price");
+        $items->setOrder("asc");
+
+
+        $Gents=[];
+
+        foreach ($items as $item) {
+            if($item->getGender()=="M")
+            {
+                  array_push($Gents,$item);
+            }
+          }
+        return $this->render('default/ClothesContent.html.twig',['objects'=>$Gents]);
+    }
+
+
+
+     /**
+     * @Route("/ladies", name="ladies", methods={"GET","POST"})
+     */
+    public function showLadiesClothes(Request $request): Response
+    {  //$object_array=[];
+        $items = new DataObject\Clothes\Listing();
+        $items->setOrderKey("price");
+        $items->setOrder("asc");
+
+
+        $Ladies=[];
+
+        foreach ($items as $item) {
+            if($item->getGender()=="F")
+            {
+                  array_push($Ladies,$item);
+            }
+
+          }
+
+
+
+        return $this->render('default/ClothesContent.html.twig',['objects'=>$Ladies]);
+    }
+
+
+
 
 
 //  /**

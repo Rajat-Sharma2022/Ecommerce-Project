@@ -10,6 +10,7 @@
  * - category [objectbricks]
  * - description [input]
  * - photo [image]
+ * - product [select]
  */
 
 namespace Pimcore\Model\DataObject;
@@ -23,6 +24,7 @@ use Pimcore\Model\DataObject\PreGetValueHookInterface;
 * @method static \Pimcore\Model\DataObject\ElectronicsDevices\Listing|\Pimcore\Model\DataObject\ElectronicsDevices|null getByPrice($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\ElectronicsDevices\Listing|\Pimcore\Model\DataObject\ElectronicsDevices|null getByDescription($value, $limit = 0, $offset = 0, $objectTypes = null)
 * @method static \Pimcore\Model\DataObject\ElectronicsDevices\Listing|\Pimcore\Model\DataObject\ElectronicsDevices|null getByPhoto($value, $limit = 0, $offset = 0, $objectTypes = null)
+* @method static \Pimcore\Model\DataObject\ElectronicsDevices\Listing|\Pimcore\Model\DataObject\ElectronicsDevices|null getByProduct($value, $limit = 0, $offset = 0, $objectTypes = null)
 */
 
 class ElectronicsDevices extends Concrete
@@ -34,6 +36,7 @@ protected $price;
 protected $category;
 protected $description;
 protected $photo;
+protected $product;
 
 
 /**
@@ -248,6 +251,48 @@ public function getPhoto(): ?\Pimcore\Model\Asset\Image
 public function setPhoto(?\Pimcore\Model\Asset\Image $photo)
 {
 	$this->photo = $photo;
+
+	return $this;
+}
+
+/**
+* Get product - Product
+* @return string|null
+*/
+public function getProduct(): ?string
+{
+	if ($this instanceof PreGetValueHookInterface && !\Pimcore::inAdmin()) {
+		$preValue = $this->preGetValue("product");
+		if ($preValue !== null) {
+			return $preValue;
+		}
+	}
+
+	$data = $this->product;
+
+	if (\Pimcore\Model\DataObject::doGetInheritedValues() && $this->getClass()->getFieldDefinition("product")->isEmpty($data)) {
+		try {
+			return $this->getValueFromParent("product");
+		} catch (InheritanceParentNotFoundException $e) {
+			// no data from parent available, continue ...
+		}
+	}
+
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		return $data->getPlain();
+	}
+
+	return $data;
+}
+
+/**
+* Set product - Product
+* @param string|null $product
+* @return \Pimcore\Model\DataObject\ElectronicsDevices
+*/
+public function setProduct(?string $product)
+{
+	$this->product = $product;
 
 	return $this;
 }

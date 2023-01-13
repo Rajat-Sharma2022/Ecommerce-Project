@@ -84,6 +84,20 @@ class __TwigTemplate_3da341918fbd7ccd1fd97266d95eef6b extends Template
 </nav>
 
 
+<div class=\"my-3\">
+<center>
+<h2>apply Filters</h2>
+
+<a href=\"tv\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">TV</a>
+    <a href=\"laptop\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Laptops</a>
+    <a href=\"phone\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Phones</a>
+     
+    
+</center>
+</div>
+
+
+
 
 
         <div class=\"container\">
@@ -91,30 +105,30 @@ class __TwigTemplate_3da341918fbd7ccd1fd97266d95eef6b extends Template
             <div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3\">
 
                 ";
-        // line 49
+        // line 63
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 49, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 63, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["object"]) {
-            // line 50
+            // line 64
             echo "                    <div class=\"col\">
                         <div class=\"card shadow-sm\">
                             <div class=\"card-body\">
                                 <img src=\"";
-            // line 53
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 53), 53, $this->source), "html", null, true);
+            // line 67
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 67), 67, $this->source), "html", null, true);
             echo " \" alt=\"tv1\" class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225px\">
                                 <p class=\"card-text\">
                                     <h2>
                                         ";
-            // line 56
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 56), 56, $this->source), "html", null, true);
+            // line 70
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 70), 70, $this->source), "html", null, true);
             echo "</h2>
                                     With all latest features
                                 </p>
                                 <h2>
                                     Price:";
-            // line 60
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
+            // line 74
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 74), 74, $this->source), "html", null, true);
             echo "<h2>
                                         <div class=\"d-flex justify-content-between align-items-center\">
                                             <div class=\"btn-group\">
@@ -131,7 +145,7 @@ class __TwigTemplate_3da341918fbd7ccd1fd97266d95eef6b extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['object'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 72
+        // line 86
         echo "
                     </div>
 
@@ -226,7 +240,7 @@ class __TwigTemplate_3da341918fbd7ccd1fd97266d95eef6b extends Template
 
     public function getDebugInfo()
     {
-        return array (  135 => 72,  117 => 60,  110 => 56,  104 => 53,  99 => 50,  95 => 49,  45 => 1,);
+        return array (  149 => 86,  131 => 74,  124 => 70,  118 => 67,  113 => 64,  109 => 63,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -271,6 +285,20 @@ class __TwigTemplate_3da341918fbd7ccd1fd97266d95eef6b extends Template
     </div>
   </div>
 </nav>
+
+
+<div class=\"my-3\">
+<center>
+<h2>apply Filters</h2>
+
+<a href=\"tv\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">TV</a>
+    <a href=\"laptop\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Laptops</a>
+    <a href=\"phone\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Phones</a>
+     
+    
+</center>
+</div>
+
 
 
 
@@ -380,8 +408,8 @@ class __TwigTemplate_3da341918fbd7ccd1fd97266d95eef6b extends Template
     
     public function checkSecurity()
     {
-        static $tags = array("for" => 49);
-        static $filters = array("escape" => 53);
+        static $tags = array("for" => 63);
+        static $filters = array("escape" => 67);
         static $functions = array();
 
         try {

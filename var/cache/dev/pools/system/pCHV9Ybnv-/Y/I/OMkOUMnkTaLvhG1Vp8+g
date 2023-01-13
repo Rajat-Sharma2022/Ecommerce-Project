@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CAsset%2523removeCustomSetting
+
+return [PHP_INT_MAX, []];

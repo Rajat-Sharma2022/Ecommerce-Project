@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CElement%255CAbstractElement%2523markFieldDirty
+
+return [PHP_INT_MAX, []];

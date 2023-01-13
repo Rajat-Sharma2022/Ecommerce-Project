@@ -10,6 +10,7 @@
  * - category [objectbricks]
  * - description [input]
  * - photo [image]
+ * - product [select]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -18,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'electronicsDevices',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1673248893,
+   'modificationDate' => 1673459660,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -211,6 +212,52 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => 200,
              'height' => 200,
              'uploadPath' => '',
+          )),
+          5 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'product',
+             'title' => 'Product',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'select',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'tv',
+                'value' => 'tv',
+              ),
+              1 => 
+              array (
+                'key' => 'laptop',
+                'value' => 'laptop',
+              ),
+              2 => 
+              array (
+                'key' => 'phone',
+                'value' => 'phone',
+              ),
+            ),
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,

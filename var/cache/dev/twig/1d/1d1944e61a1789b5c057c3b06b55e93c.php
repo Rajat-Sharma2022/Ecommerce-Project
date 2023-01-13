@@ -81,7 +81,20 @@ class __TwigTemplate_6c0834cefe46a6c8777f08be6e6e4622 extends Template
       </form>
     </div>
   </div>
-</nav>
+</nav>     
+
+
+
+<div class=\"my-3\">
+<center>
+<h2>apply Filters</h2>
+
+<a href=\"gents\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Men Clothes</a>
+    <a href=\"ladies\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Women Clothes</a>
+    
+</center>
+</div>
+
 
 
 
@@ -91,56 +104,56 @@ class __TwigTemplate_6c0834cefe46a6c8777f08be6e6e4622 extends Template
             <div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3\">
 
                 ";
-        // line 49
+        // line 62
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 49, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 62, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["object"]) {
-            // line 50
+            // line 63
             echo "                    <div class=\"col\">
                         <div class=\"card shadow-sm\">
                             <div class=\"card-body\">
                                 <img src=\"";
-            // line 53
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 53), 53, $this->source), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 66), 66, $this->source), "html", null, true);
             echo " \" alt=\"tv1\" class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225px\">
                                 <p class=\"card-text\">
 
                                             ";
-            // line 56
-            if ((twig_get_attribute($this->env, $this->source, $context["object"], "getGender", [], "method", false, false, true, 56) == "M")) {
-                // line 57
+            // line 69
+            if ((twig_get_attribute($this->env, $this->source, $context["object"], "getGender", [], "method", false, false, true, 69) == "M")) {
+                // line 70
                 echo "                                    <h2>Brand:";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 57), "getMensWear", [], "method", false, false, true, 57), "getBrand", [], "method", false, false, true, 57), 57, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 70), "getMensWear", [], "method", false, false, true, 70), "getBrand", [], "method", false, false, true, 70), 70, $this->source), "html", null, true);
                 echo "<h2>
                                     <h2>Size:";
-                // line 58
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 58), "getMensWear", [], "method", false, false, true, 58), "getSize", [], "method", false, false, true, 58), 58, $this->source), "html", null, true);
+                // line 71
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 71), "getMensWear", [], "method", false, false, true, 71), "getSize", [], "method", false, false, true, 71), 71, $this->source), "html", null, true);
                 echo "<h2>
                                             ";
             } else {
-                // line 60
+                // line 73
                 echo "                                               <h2>Brand:";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 60), "getWomensWear", [], "method", false, false, true, 60), "getBrand", [], "method", false, false, true, 60), 60, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 73), "getWomensWear", [], "method", false, false, true, 73), "getBrand", [], "method", false, false, true, 73), 73, $this->source), "html", null, true);
                 echo "<h2>
                                                <h2>Size:";
-                // line 61
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 61), "getWomensWear", [], "method", false, false, true, 61), "getSize", [], "method", false, false, true, 61), 61, $this->source), "html", null, true);
+                // line 74
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 74), "getWomensWear", [], "method", false, false, true, 74), "getSize", [], "method", false, false, true, 74), 74, $this->source), "html", null, true);
                 echo "<h2>
                                             ";
             }
-            // line 63
+            // line 76
             echo "
 
                                         </p>
                                         <h2>
                                             Price:";
-            // line 67
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 67), 67, $this->source), "html", null, true);
+            // line 80
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 80), 80, $this->source), "html", null, true);
             echo "<h2>
                                             <h2>
                                         ";
-            // line 69
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 69), 69, $this->source), "html", null, true);
+            // line 82
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 82), 82, $this->source), "html", null, true);
             echo "</h2>
                                                 <div class=\"d-flex justify-content-between align-items-center\">
                                                     <div class=\"btn-group\">
@@ -159,7 +172,7 @@ class __TwigTemplate_6c0834cefe46a6c8777f08be6e6e4622 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['object'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 96
         echo "
                             </div>
                         </div>
@@ -252,7 +265,7 @@ class __TwigTemplate_6c0834cefe46a6c8777f08be6e6e4622 extends Template
 
     public function getDebugInfo()
     {
-        return array (  163 => 83,  143 => 69,  138 => 67,  132 => 63,  127 => 61,  122 => 60,  117 => 58,  112 => 57,  110 => 56,  104 => 53,  99 => 50,  95 => 49,  45 => 1,);
+        return array (  176 => 96,  156 => 82,  151 => 80,  145 => 76,  140 => 74,  135 => 73,  130 => 71,  125 => 70,  123 => 69,  117 => 66,  112 => 63,  108 => 62,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -296,7 +309,20 @@ class __TwigTemplate_6c0834cefe46a6c8777f08be6e6e4622 extends Template
       </form>
     </div>
   </div>
-</nav>
+</nav>     
+
+
+
+<div class=\"my-3\">
+<center>
+<h2>apply Filters</h2>
+
+<a href=\"gents\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Men Clothes</a>
+    <a href=\"ladies\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Women Clothes</a>
+    
+</center>
+</div>
+
 
 
 
@@ -415,8 +441,8 @@ class __TwigTemplate_6c0834cefe46a6c8777f08be6e6e4622 extends Template
     
     public function checkSecurity()
     {
-        static $tags = array("for" => 49, "if" => 56);
-        static $filters = array("escape" => 53);
+        static $tags = array("for" => 62, "if" => 69);
+        static $filters = array("escape" => 66);
         static $functions = array();
 
         try {

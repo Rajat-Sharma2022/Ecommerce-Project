@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CModelInterface
+
+return [PHP_INT_MAX, []];

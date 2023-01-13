@@ -1,0 +1,3 @@
+<?php //Pimcore%255CModel%255CElement%255CElementInterface%2523getUserModification
+
+return [PHP_INT_MAX, []];

@@ -81,6 +81,16 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
     </div>
   </div>
 </nav>
+<center>
+<div class=\"my-3\">
+<h2>apply Filters</h2>
+
+<a href=\"shoes\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">shoes</a>
+    <a href=\"sandal\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">sandal</a>
+    <a href=\"chappal\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">chappal</a>
+    
+</center>
+</div>
 
 
 
@@ -90,19 +100,19 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
             <div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3\">
 
                 ";
-        // line 48
+        // line 58
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 48, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 58, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["object"]) {
-            // line 49
+            // line 59
             echo "                    <div class=\"col\">
                         <div class=\"card shadow-sm\">
 
 
                             <div class=\"card-body\">
                                 <img src=\"";
-            // line 54
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 54), 54, $this->source), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 64), 64, $this->source), "html", null, true);
             echo " \" alt=\"tv1\" class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225px\">
                                 <p class=\"card-text\">
                                     
@@ -110,26 +120,26 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
                                 </p>
                                 <h2>
                                     Price:";
-            // line 60
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
+            // line 70
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 70), 70, $this->source), "html", null, true);
             echo "<h2>
                                    
                                         <h2>Size:
                                         ";
-            // line 63
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getSize", [], "method", false, false, true, 63), 63, $this->source), "html", null, true);
+            // line 73
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getSize", [], "method", false, false, true, 73), 73, $this->source), "html", null, true);
             echo "</h2>
 
                                         <h2>color:
                                         ";
-            // line 66
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getColor", [], "method", false, false, true, 66), 66, $this->source), "html", null, true);
+            // line 76
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getColor", [], "method", false, false, true, 76), 76, $this->source), "html", null, true);
             echo "</h2>
 
                                          <h2>
                                         ";
-            // line 69
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 69), 69, $this->source), "html", null, true);
+            // line 79
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 79), 79, $this->source), "html", null, true);
             echo "</h2>
                                         <div class=\"d-flex justify-content-between align-items-center\">
                                             <div class=\"btn-group\">
@@ -148,7 +158,7 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['object'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 93
         echo "
                     </div>
                     </div>
@@ -242,7 +252,7 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
 
     public function getDebugInfo()
     {
-        return array (  152 => 83,  132 => 69,  126 => 66,  120 => 63,  114 => 60,  105 => 54,  98 => 49,  94 => 48,  45 => 1,);
+        return array (  162 => 93,  142 => 79,  136 => 76,  130 => 73,  124 => 70,  115 => 64,  108 => 59,  104 => 58,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -286,6 +296,16 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
     </div>
   </div>
 </nav>
+<center>
+<div class=\"my-3\">
+<h2>apply Filters</h2>
+
+<a href=\"shoes\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">shoes</a>
+    <a href=\"sandal\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">sandal</a>
+    <a href=\"chappal\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">chappal</a>
+    
+</center>
+</div>
 
 
 
@@ -406,8 +426,8 @@ class __TwigTemplate_d5f17088150fbaad8c16d180c43616ab extends Template
     
     public function checkSecurity()
     {
-        static $tags = array("for" => 48);
-        static $filters = array("escape" => 54);
+        static $tags = array("for" => 58);
+        static $filters = array("escape" => 64);
         static $functions = array();
 
         try {

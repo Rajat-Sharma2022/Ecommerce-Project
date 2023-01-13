@@ -86,86 +86,99 @@ class __TwigTemplate_ef9c50a4d5f23de4492ac0ed93e94684 extends Template
 
 
 
+<div class=\"my-3\">
+<center>
+<h2>apply Filters</h2>
+
+<a href=\"hair\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Hair Product</a>
+    <a href=\"skin\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Skin Product</a>
+    <a href=\"makeup\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Make Up</a>
+     <a href=\"perfume\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Perfumes</a>
+    
+</center>
+</div>
+
+
         <div class=\"container\">
 
             <div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3\">
 
                 ";
-        // line 49
+        // line 62
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 49, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["objects"]) || array_key_exists("objects", $context) ? $context["objects"] : (function () { throw new RuntimeError('Variable "objects" does not exist.', 62, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["object"]) {
-            // line 50
+            // line 63
             echo "                    <div class=\"col\">
                         <div class=\"card shadow-sm\">
                             <div class=\"card-body\">
                                 <img src=\"";
-            // line 53
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 53), 53, $this->source), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPhoto", [], "method", false, false, true, 66), 66, $this->source), "html", null, true);
             echo " \" alt=\"tv1\" class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225px\">
                                 <p class=\"card-text\">
                                     ";
-            // line 55
-            if ((twig_get_attribute($this->env, $this->source, $context["object"], "getSelect", [], "method", false, false, true, 55) == "hair")) {
-                // line 56
+            // line 68
+            if ((twig_get_attribute($this->env, $this->source, $context["object"], "getSelect", [], "method", false, false, true, 68) == "hair")) {
+                // line 69
                 echo "                                        <h2> Brand:";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 56), "getHaircare", [], "method", false, false, true, 56), "getBrand", [], "method", false, false, true, 56), 56, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 69), "getHaircare", [], "method", false, false, true, 69), "getBrand", [], "method", false, false, true, 69), 69, $this->source), "html", null, true);
                 echo "<h2>
                                         <h2> quantity:";
-                // line 57
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 57), "getHaircare", [], "method", false, false, true, 57), "getQuantity", [], "method", false, false, true, 57), 57, $this->source), "html", null, true);
+                // line 70
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 70), "getHaircare", [], "method", false, false, true, 70), "getQuantity", [], "method", false, false, true, 70), 70, $this->source), "html", null, true);
                 echo "<h2>
                                     ";
-            } elseif ((twig_get_attribute($this->env, $this->source,             // line 58
-$context["object"], "getSelect", [], "method", false, false, true, 58) == "perfume")) {
-                // line 59
+            } elseif ((twig_get_attribute($this->env, $this->source,             // line 71
+$context["object"], "getSelect", [], "method", false, false, true, 71) == "perfume")) {
+                // line 72
                 echo "                                     <h2> fragrance:";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 59), "getPerfume", [], "method", false, false, true, 59), "getFragrance", [], "method", false, false, true, 59), 59, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 72), "getPerfume", [], "method", false, false, true, 72), "getFragrance", [], "method", false, false, true, 72), 72, $this->source), "html", null, true);
                 echo "<h2>
                                         <h2> Brand:";
-                // line 60
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 60), "getPerfume", [], "method", false, false, true, 60), "getBrand", [], "method", false, false, true, 60), 60, $this->source), "html", null, true);
+                // line 73
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 73), "getPerfume", [], "method", false, false, true, 73), "getBrand", [], "method", false, false, true, 73), 73, $this->source), "html", null, true);
                 echo "<h2>
 
                                     ";
-            } elseif ((twig_get_attribute($this->env, $this->source,             // line 62
-$context["object"], "getSelect", [], "method", false, false, true, 62) == "makeup")) {
-                // line 63
+            } elseif ((twig_get_attribute($this->env, $this->source,             // line 75
+$context["object"], "getSelect", [], "method", false, false, true, 75) == "makeup")) {
+                // line 76
                 echo "                                     <h2> type:";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 63), "getMakeup", [], "method", false, false, true, 63), "getOptions", [], "method", false, false, true, 63), 63, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 76), "getMakeup", [], "method", false, false, true, 76), "getOptions", [], "method", false, false, true, 76), 76, $this->source), "html", null, true);
                 echo "<h2>
                                         <h2> Brand:";
-                // line 64
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 64), "getMakeup", [], "method", false, false, true, 64), "getBrand", [], "method", false, false, true, 64), 64, $this->source), "html", null, true);
+                // line 77
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 77), "getMakeup", [], "method", false, false, true, 77), "getBrand", [], "method", false, false, true, 77), 77, $this->source), "html", null, true);
                 echo "<h2>
                                         
                                     ";
             } else {
-                // line 67
+                // line 80
                 echo "                                     <h2> Quantity:";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 67), "getSkincare", [], "method", false, false, true, 67), "getQuantity", [], "method", false, false, true, 67), 67, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 80), "getSkincare", [], "method", false, false, true, 80), "getQuantity", [], "method", false, false, true, 80), 80, $this->source), "html", null, true);
                 echo "<h2>
                                         <h2> Brand:";
-                // line 68
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 68), "getSkincare", [], "any", false, false, true, 68), "getBrand", [], "method", false, false, true, 68), 68, $this->source), "html", null, true);
+                // line 81
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["object"], "getCategory", [], "method", false, false, true, 81), "getSkincare", [], "any", false, false, true, 81), "getBrand", [], "method", false, false, true, 81), 81, $this->source), "html", null, true);
                 echo "<h2>
                                         
                                         
                                     ";
             }
-            // line 72
+            // line 85
             echo "
 
                                 </p>
                                 <h2>
                                     Price:";
-            // line 76
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 76), 76, $this->source), "html", null, true);
+            // line 89
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getPrice", [], "any", false, false, true, 89), 89, $this->source), "html", null, true);
             echo "<h2>
                                         <h2>
                                             ";
-            // line 78
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 78), 78, $this->source), "html", null, true);
+            // line 91
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["object"], "getDescription", [], "method", false, false, true, 91), 91, $this->source), "html", null, true);
             echo "</h2>
                                         <div class=\"d-flex justify-content-between align-items-center\">
                                             <div class=\"btn-group\">
@@ -184,7 +197,7 @@ $context["object"], "getSelect", [], "method", false, false, true, 62) == "makeu
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['object'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 92
+        // line 105
         echo "
                     </div>
 
@@ -282,7 +295,7 @@ $context["object"], "getSelect", [], "method", false, false, true, 62) == "makeu
 
     public function getDebugInfo()
     {
-        return array (  188 => 92,  168 => 78,  163 => 76,  157 => 72,  150 => 68,  145 => 67,  139 => 64,  134 => 63,  132 => 62,  127 => 60,  122 => 59,  120 => 58,  116 => 57,  111 => 56,  109 => 55,  104 => 53,  99 => 50,  95 => 49,  45 => 1,);
+        return array (  201 => 105,  181 => 91,  176 => 89,  170 => 85,  163 => 81,  158 => 80,  152 => 77,  147 => 76,  145 => 75,  140 => 73,  135 => 72,  133 => 71,  129 => 70,  124 => 69,  122 => 68,  117 => 66,  112 => 63,  108 => 62,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -329,6 +342,19 @@ $context["object"], "getSelect", [], "method", false, false, true, 62) == "makeu
 </nav>
 
 
+
+
+<div class=\"my-3\">
+<center>
+<h2>apply Filters</h2>
+
+<a href=\"hair\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Hair Product</a>
+    <a href=\"skin\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Skin Product</a>
+    <a href=\"makeup\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Make Up</a>
+     <a href=\"perfume\" class=\"btn btn-primary btn-sm active\" role=\"button\" aria-pressed=\"true\">Perfumes</a>
+    
+</center>
+</div>
 
 
         <div class=\"container\">
@@ -459,8 +485,8 @@ $context["object"], "getSelect", [], "method", false, false, true, 62) == "makeu
     
     public function checkSecurity()
     {
-        static $tags = array("for" => 49, "if" => 55);
-        static $filters = array("escape" => 53);
+        static $tags = array("for" => 62, "if" => 68);
+        static $filters = array("escape" => 66);
         static $functions = array();
 
         try {
