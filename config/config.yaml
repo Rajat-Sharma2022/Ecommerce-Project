@@ -134,7 +134,7 @@ framework:
 #        handler_id: null
 
 #### SYMFONY MAILER TRANSPORTS
-#    mailer:
-#        transports:
-#            main: smtp://user:pass@smtp.example.com:port
-#            pimcore_newsletter: smtp://user:pass@smtp.example.com:port
+   mailer:
+       transports:
+           main: smtp://nikitajain81200@gmail.com:bvhlfwjjismrrulk@smtp.gmail.com:587
+           pimcore_newsletter: smtp://nikitajain81200@gmail.com:bvhlfwjjismrrulk@smtp.gmail.com:587

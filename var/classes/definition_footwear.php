@@ -23,7 +23,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'footwear',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1673345643,
+   'modificationDate' => 1673809382,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -309,27 +309,27 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               2 => 
               array (
                 'key' => 'Redtape',
-                'value' => 'Redtape',
+                'value' => 'redtape',
               ),
               3 => 
               array (
                 'key' => 'Nike',
-                'value' => 'Nike',
+                'value' => 'nike',
               ),
               4 => 
               array (
                 'key' => 'Bata',
-                'value' => 'Bata',
+                'value' => 'bata',
               ),
               5 => 
               array (
                 'key' => 'Reebok.',
-                'value' => 'Reebok.',
+                'value' => 'reebok.',
               ),
               6 => 
               array (
                 'key' => 'Woodland',
-                'value' => 'Woodland',
+                'value' => 'woodland',
               ),
             ),
              'width' => '',

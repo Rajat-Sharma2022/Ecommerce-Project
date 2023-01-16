@@ -89,6 +89,36 @@ class DefaultController extends FrontendController
 
 
         /**
+     * @Route("/electronic/{page}", methods={"GET","POST"})
+     */
+    public function showElectronicPage($page): Response
+    {  //$object_array=[];
+        $items = new DataObject\ElectronicsDevices\Listing();
+        $items->setOrderKey("price");
+        $items->setOrder("asc");
+        $objects=[];
+$pageitems=[];
+        foreach ($items as $item) {
+
+                  array_push($objects,$item);
+
+
+          }
+$pageitems=array_slice($objects,($page-1)*3,3);
+$totalpages=count($objects)/3;
+
+
+
+
+        return $this->render('default/pageElectronic.html.twig',['objects'=>$pageitems,'number'=>$totalpages]);
+
+
+
+    }
+
+
+
+        /**
      * @Route("/electronic", name="electronic", methods={"GET","POST"})
      */
     public function showElectronic(Request $request): Response
@@ -98,11 +128,17 @@ class DefaultController extends FrontendController
         $items->setOrder("asc");
 
 
+
+
+
         return $this->render('default/electronicContent.html.twig',['objects'=>$items]);
 
 
 
     }
+
+
+
 
      /**
      * @Route("/tv", name="tv", methods={"GET","POST"})
@@ -427,8 +463,8 @@ class DefaultController extends FrontendController
     public function submit(Request $request): Response
     {
    $ob=new Feedback();
-   $key=rand(1,1000000000);
-   $ob->setKey($key);
+
+   $ob->setKey("feedback".time());
    $ob->setParentId(43);
    $ob->setName($_POST["name"]);
    $ob->setEmail($_POST["email"]);
@@ -436,8 +472,83 @@ class DefaultController extends FrontendController
    $ob->setOthers($_POST["other"]);
 
    $ob->save();
+
+
+
+   $mail = new \Pimcore\Mail();
+
+$mail->to('rajat.sharma2@happiestminds.com');
+$str=$_POST["name"]." 's feedback .User like : ".$_POST["likes"]." other product suggestions ".$_POST["other"];
+
+$mail->text($str);
+
+$mail->send();
+
+
    return $this->render('default/submit.html.twig',['name'=>$_POST["name"]]);
 
+
+    }
+
+
+       /**
+     * @Route("/search", name="search", methods={"POST"})
+     */
+    public function search(Request $request): Response{
+        $text=strtolower($_POST["search"]);
+
+        $items = new DataObject\Footwear\Listing();
+        $items->setOrderKey("RAND()", false);
+        $search=[];
+
+        foreach ($items as $item) {
+            if(str_starts_with($item->getBrand(),$text))
+            {
+                  array_push($search,$item);
+            }
+
+          }
+        return $this->render('default/FootwearContent.html.twig',['objects'=>$search]);
+    }
+
+
+
+      /**
+     * @Route("/searchclothes", name="searchclothes", methods={"POST"})
+     */
+    public function searchclothes(Request $request): Response{
+        $text=strtolower($_POST["search"]);
+
+        $items = new DataObject\Clothes\Listing();
+        $items->setOrderKey("price");
+        $items->setOrder("asc");
+
+        $brand="";
+
+
+        $result=[];
+
+        foreach ($items as $item) {
+            if($item->getGender()=="M")
+            {
+                  $brand=strtolower($item->getCategory()->getMensWear()->getBrand());
+            }
+            else
+            {
+                $brand=strtolower($item->getCategory()->getWomensWear()->getBrand());
+            }
+
+
+            if(str_starts_with($brand,$text))
+            {
+                  array_push($result,$item);
+            }
+
+          }
+          //array_push($result,$item);
+
+
+        return $this->render('default/ClothesContent.html.twig',['objects'=>$result]);
 
     }
 

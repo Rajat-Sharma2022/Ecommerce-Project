@@ -564,6 +564,8 @@ return [
         '/perfume' => [[['_route' => 'perfume', '_controller' => 'App\\Controller\\DefaultController::perfume'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/form' => [[['_route' => 'form', '_controller' => 'App\\Controller\\DefaultController::homepage'], null, ['GET' => 0], null, false, false, null]],
         '/submit' => [[['_route' => 'submit', '_controller' => 'App\\Controller\\DefaultController::submit'], null, ['POST' => 0], null, false, false, null]],
+        '/search' => [[['_route' => 'search', '_controller' => 'App\\Controller\\DefaultController::search'], null, ['POST' => 0], null, false, false, null]],
+        '/searchclothes' => [[['_route' => 'searchclothes', '_controller' => 'App\\Controller\\DefaultController::searchclothes'], null, ['POST' => 0], null, false, false, null]],
         '/csv' => [[['_route' => 'csv', '_controller' => 'App\\Controller\\DefaultController::importCsv'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/clothes' => [[['_route' => 'clothes', '_controller' => 'App\\Controller\\MyController::showClothes'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/gents' => [[['_route' => 'gents', '_controller' => 'App\\Controller\\MyController::showGentsClothes'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -601,6 +603,7 @@ return [
                         .'|s/(.*)(*:556)'
                     .')'
                 .')'
+                .'|/electronic/([^/]++)(*:586)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -619,8 +622,9 @@ return [
         459 => [[['_route' => 'pimcore_admin_dataobject_dataobject_diffversions', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\DataObject\\DataObjectController::diffVersionsAction'], ['from', 'to'], ['GET' => 0], null, false, true, null]],
         510 => [[['_route' => 'pimcore_admin_document_document_diffversions', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\Document\\DocumentController::diffVersionsAction'], ['from', 'to'], ['GET' => 0], null, false, true, null]],
         542 => [[['_route' => 'pimcore_admin_external_adminer_proxy', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\External\\AdminerController::proxyAction'], ['path'], null, null, false, true, null]],
-        556 => [
-            [['_route' => 'pimcore_admin_external_adminer_proxy_2', 'type' => 'external', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\External\\AdminerController::proxyAction'], ['path'], null, null, false, true, null],
+        556 => [[['_route' => 'pimcore_admin_external_adminer_proxy_2', 'type' => 'external', '_controller' => 'Pimcore\\Bundle\\AdminBundle\\Controller\\Admin\\External\\AdminerController::proxyAction'], ['path'], null, null, false, true, null]],
+        586 => [
+            [['_route' => 'app_default_showelectronicpage', '_controller' => 'App\\Controller\\DefaultController::showElectronicPage'], ['page'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

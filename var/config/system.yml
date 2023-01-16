@@ -1,3 +1,38 @@
 pimcore:
     general:
+        domain: ''
+        redirect_to_maindomain: false
         language: en
+        valid_languages: en
+        fallback_languages:
+            en: ''
+        default_language: en
+        debug_admin_translations: false
+    documents:
+        versions:
+            days: null
+            steps: null
+        error_pages:
+            default: ''
+            localized:
+                en: ''
+    objects:
+        versions:
+            days: null
+            steps: null
+    assets:
+        versions:
+            days: null
+            steps: null
+        hide_edit_image: false
+        disable_tree_preview: true
+    email:
+        debug:
+            email_addresses: rssrajatsharma@gmail.com
+pimcore_admin:
+    branding:
+        login_screen_invert_colors: false
+        color_login_screen: ''
+        color_admin_interface: ''
+        color_admin_interface_background: ''
+        login_screen_custom_image: ''

@@ -412,6 +412,14 @@
             <parameter key="definitions" type="collection"/>
           </parameter>
         </parameter>
+        <parameter key="versions" type="collection">
+          <parameter key="days">null</parameter>
+          <parameter key="steps">null</parameter>
+          <parameter key="use_hardlinks">true</parameter>
+          <parameter key="disable_stack_trace">false</parameter>
+        </parameter>
+        <parameter key="hide_edit_image">false</parameter>
+        <parameter key="disable_tree_preview">true</parameter>
         <parameter key="frontend_prefixes" type="collection">
           <parameter key="source"></parameter>
           <parameter key="thumbnail"></parameter>
@@ -454,16 +462,8 @@
             <parameter key="auto_clear_temp_files">true</parameter>
           </parameter>
         </parameter>
-        <parameter key="versions" type="collection">
-          <parameter key="days">null</parameter>
-          <parameter key="steps">null</parameter>
-          <parameter key="use_hardlinks">true</parameter>
-          <parameter key="disable_stack_trace">false</parameter>
-        </parameter>
         <parameter key="icc_rgb_profile">null</parameter>
         <parameter key="icc_cmyk_profile">null</parameter>
-        <parameter key="hide_edit_image">false</parameter>
-        <parameter key="disable_tree_preview">true</parameter>
       </parameter>
       <parameter key="objects" type="collection">
         <parameter key="class_definitions" type="collection">
@@ -537,6 +537,11 @@
             <parameter key="map" type="collection"/>
           </parameter>
         </parameter>
+        <parameter key="versions" type="collection">
+          <parameter key="days">null</parameter>
+          <parameter key="steps">null</parameter>
+          <parameter key="disable_stack_trace">false</parameter>
+        </parameter>
         <parameter key="ignore_localized_query_fallback">false</parameter>
         <parameter key="tree_paging_limit">30</parameter>
         <parameter key="auto_save_interval">60</parameter>
@@ -566,6 +571,17 @@
           <parameter>link</parameter>
           <parameter>page</parameter>
           <parameter>snippet</parameter>
+        </parameter>
+        <parameter key="versions" type="collection">
+          <parameter key="days">null</parameter>
+          <parameter key="steps">null</parameter>
+          <parameter key="disable_stack_trace">false</parameter>
+        </parameter>
+        <parameter key="error_pages" type="collection">
+          <parameter key="default"></parameter>
+          <parameter key="localized" type="collection">
+            <parameter key="en"></parameter>
+          </parameter>
         </parameter>
         <parameter key="doc_types" type="collection">
           <parameter key="definitions" type="collection"/>
@@ -802,17 +818,33 @@
         <parameter key="data_object" type="collection"/>
       </parameter>
       <parameter key="general" type="collection">
-        <parameter key="language">en</parameter>
-        <parameter key="timezone"></parameter>
-        <parameter key="path_variable">null</parameter>
         <parameter key="domain"></parameter>
         <parameter key="redirect_to_maindomain">false</parameter>
+        <parameter key="language">en</parameter>
         <parameter key="valid_languages">en</parameter>
-        <parameter key="fallback_languages" type="collection"/>
+        <parameter key="fallback_languages" type="collection">
+          <parameter key="en"></parameter>
+        </parameter>
         <parameter key="default_language">en</parameter>
-        <parameter key="disable_usage_statistics">false</parameter>
         <parameter key="debug_admin_translations">false</parameter>
+        <parameter key="timezone"></parameter>
+        <parameter key="path_variable">null</parameter>
+        <parameter key="disable_usage_statistics">false</parameter>
         <parameter key="instance_identifier">null</parameter>
+      </parameter>
+      <parameter key="email" type="collection">
+        <parameter key="debug" type="collection">
+          <parameter key="email_addresses">rssrajatsharma@gmail.com</parameter>
+        </parameter>
+        <parameter key="sender" type="collection">
+          <parameter key="name"></parameter>
+          <parameter key="email"></parameter>
+        </parameter>
+        <parameter key="return" type="collection">
+          <parameter key="name"></parameter>
+          <parameter key="email"></parameter>
+        </parameter>
+        <parameter key="usespecific">false</parameter>
       </parameter>
       <parameter key="error_handling" type="collection">
         <parameter key="render_error_document">true</parameter>
@@ -846,20 +878,6 @@
       <parameter key="full_page_cache" type="collection">
         <parameter key="enabled">true</parameter>
         <parameter key="lifetime">null</parameter>
-      </parameter>
-      <parameter key="email" type="collection">
-        <parameter key="sender" type="collection">
-          <parameter key="name"></parameter>
-          <parameter key="email"></parameter>
-        </parameter>
-        <parameter key="return" type="collection">
-          <parameter key="name"></parameter>
-          <parameter key="email"></parameter>
-        </parameter>
-        <parameter key="debug" type="collection">
-          <parameter key="email_addresses"></parameter>
-        </parameter>
-        <parameter key="usespecific">false</parameter>
       </parameter>
       <parameter key="workflows" type="collection"/>
       <parameter key="httpclient" type="collection">
@@ -956,6 +974,13 @@
     <parameter key="pimcore_admin.custom_admin_path_identifier">null</parameter>
     <parameter key="pimcore_admin.custom_admin_route_name">my_custom_admin_entry_point</parameter>
     <parameter key="pimcore_admin.config" type="collection">
+      <parameter key="branding" type="collection">
+        <parameter key="login_screen_invert_colors">false</parameter>
+        <parameter key="color_login_screen"></parameter>
+        <parameter key="color_admin_interface"></parameter>
+        <parameter key="color_admin_interface_background"></parameter>
+        <parameter key="login_screen_custom_image"></parameter>
+      </parameter>
       <parameter key="gdpr_data_extractor" type="collection">
         <parameter key="dataObjects" type="collection">
           <parameter key="classes" type="collection"/>
@@ -1017,13 +1042,6 @@
       </parameter>
       <parameter key="custom_admin_path_identifier">null</parameter>
       <parameter key="custom_admin_route_name">my_custom_admin_entry_point</parameter>
-      <parameter key="branding" type="collection">
-        <parameter key="login_screen_invert_colors">false</parameter>
-        <parameter key="color_login_screen">null</parameter>
-        <parameter key="color_admin_interface">null</parameter>
-        <parameter key="color_admin_interface_background">null</parameter>
-        <parameter key="login_screen_custom_image">null</parameter>
-      </parameter>
     </parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="Pimcore\Bundle\CoreBundle\DataCollector\PimcoreDataCollector" type="collection">
@@ -2474,8 +2492,8 @@
     </service>
     <service id="mailer.transports" class="Symfony\Component\Mailer\Transport\Transports">
       <argument type="collection">
-        <argument key="main">native://default</argument>
-        <argument key="pimcore_newsletter">native://default</argument>
+        <argument key="main">smtp://nikitajain81200@gmail.com:bvhlfwjjismrrulk@smtp.gmail.com:587</argument>
+        <argument key="pimcore_newsletter">smtp://nikitajain81200@gmail.com:bvhlfwjjismrrulk@smtp.gmail.com:587</argument>
       </argument>
       <factory service="mailer.transport_factory" method="fromStrings"/>
     </service>
@@ -2483,7 +2501,7 @@
       <argument type="tagged_iterator" tag="mailer.transport_factory"/>
     </service>
     <service id="mailer.default_transport" class="Symfony\Component\Mailer\Transport\TransportInterface">
-      <argument>native://default</argument>
+      <argument>smtp://nikitajain81200@gmail.com:bvhlfwjjismrrulk@smtp.gmail.com:587</argument>
       <factory service="mailer.transport_factory" method="fromString"/>
     </service>
     <service id="mailer.messenger.message_handler" class="Symfony\Component\Mailer\Messenger\MessageHandler">
